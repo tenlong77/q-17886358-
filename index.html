@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>我的网站</title>
+  <meta charset="UTF-8">
+  <title>我的个人主页</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", sans-serif;
+      background: linear-gradient(120deg, #4facfe, #00f2fe);
+      color: white;
+      text-align: center;
+    }
+
+    .box {
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      padding: 20px;
+      margin: 30px auto;
+      width: 300px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: white;
+      color: #333;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #eee;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>你好，这是我的第一个网站</h1>
-    <p>我正在用 GitHub Pages 学习建站</p>
+
+  <div class="box">
+    <h1>👋 你好，我是新手站长</h1>
+    <p>这是我用 GitHub Pages 做的第一个网站</p>
+
+    <div class="card">
+      <h3>📌 关于我</h3>
+      <p>正在学习编程 + 网站开发</p>
+      <a class="btn" href="https://github.com" target="_blank">访问 GitHub</a>
+    </div>
+
+    <div class="card">
+      <h3>📧 联系方式</h3>
+      <p>email@example.com</p>
+    </div>
+  </div>
+
 </body>
 </html>
