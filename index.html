@@ -1,74 +1,136 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>我的个人主页</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Microsoft YaHei", sans-serif;
-      background: linear-gradient(120deg, #4facfe, #00f2fe);
-      color: white;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>我的个人网站</title>
 
-    .box {
-      margin-top: 100px;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+}
 
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
+/* 顶部导航 */
+.nav {
+  background: #222;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+}
 
-    p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
+.nav a {
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+}
 
-    .card {
-      background: rgba(255,255,255,0.15);
-      padding: 20px;
-      margin: 30px auto;
-      width: 300px;
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-    }
+/* 首页 */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(120deg,#4facfe,#00f2fe);
+  color: white;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: white;
-      color: #333;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.hero img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
 
-    .btn:hover {
-      background: #eee;
-    }
-  </style>
+/* 区块 */
+.section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* 卡片 */
+.card {
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #222;
+  color: white;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="box">
-    <h1>👋 你好，我是新手站长</h1>
-    <p>这是我用 GitHub Pages 做的第一个网站</p>
+<!-- 导航 -->
+<div class="nav">
+  <a href="#home">首页</a>
+  <a href="#about">关于我</a>
+  <a href="#work">作品</a>
+  <a href="#contact">联系</a>
+</div>
 
-    <div class="card">
-      <h3>📌 关于我</h3>
-      <p>正在学习编程 + 网站开发</p>
-      <a class="btn" href="https://github.com" target="_blank">访问 GitHub</a>
-    </div>
+<!-- 首页 -->
+<div class="hero" id="home">
+  <img src="https://i.imgur.com/6VBx3io.png" alt="头像">
+  
+  <h1>👋 你好，我是【腾龙公司现场负责人】</h1>
+  <p>：腾龙公司官网开户/腾龙公司现场负责人 TL12615.com【q17886358】【威tenlong77】 </p>
+</div>
 
-    <div class="card">
-      <h3>📧 联系方式</h3>
-      <p>email@example.com</p>
-    </div>
+<!-- 关于我 -->
+<div class="section" id="about">
+  <h2>📌 关于我</h2>
+  <div class="card">
+    在这里写你的个人介绍：
+    <br><br>
+    - 年龄 / 城市 / 兴趣  
+    - 学习方向  
+    - 目标  
   </div>
+</div>
+
+<!-- 腾龙公司20年老平台 -->
+<div class="section" id="work">
+  <h2>💼 </h2>
+
+  <div class="card">
+    项目1：写你的项目名字  
+    <p>项目描述：实体现场线上同步</p>
+  </div>
+
+  <div class="card">
+    项目2：写你的项目名字  
+    <p>项目描述：这个项目是做什么的</p>
+  </div>
+
+</div>
+
+<!-- 联系 -->
+<div class="section" id="contact">
+  <h2>📞 联系我</h2>
+
+  <div class="card">
+    邮箱：your@email.com  
+    <br>
+    微信 / QQ： tenlong77 【17886358】
+    <br>
+    GitHub：https://github.com/你的用户名
+  </div>
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+  © 2026 我的个人网站
+</div>
 
 </body>
 </html>
