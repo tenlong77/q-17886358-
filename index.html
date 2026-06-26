@@ -1,155 +1,315 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
-<title>我的个人网站</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>TL12615.com - 腾龙公司官方网站</title>
+
+<meta name="description"
+content="TL12615.com
+   腾龙公司官方网站，提供公司介绍[17886358]、现场环境、客服联系方式[13035978521]、实体大厅图片展示。">
+
+<meta name="keywords"
+content="腾龙公司腾龙官网TL12615.com ,实体现场,腾龙客服[tenlong77],腾龙网址">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* 顶部导航 */
-.nav {
-  background: #222;
-  color: white;
-  display: flex;
-  justify-content: center;
-  padding: 15px;
-  position: sticky;
-  top: 0;
+body{
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#f5f5f5;
+
+line-height:1.8;
+
+color:#333;
+
 }
 
-.nav a {
-  color: white;
-  margin: 0 20px;
-  text-decoration: none;
+header{
+
+background:#111;
+
+padding:15px;
+
+text-align:center;
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
 }
 
-/* 首页 */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(120deg,#4facfe,#00f2fe);
-  color: white;
+header a{
+
+color:white;
+
+text-decoration:none;
+
+margin:0 20px;
+
+font-size:18px;
+
 }
 
-.hero img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid white;
+.banner{
+
+background:linear-gradient(120deg,#d4af37,#b8860b);
+
+color:white;
+
+padding:70px;
+
+text-align:center;
+
 }
 
-/* 区块 */
-.section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
+.banner h1{
+
+font-size:42px;
+
+margin-bottom:15px;
+
 }
 
-/* 卡片 */
-.card {
-  background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+.banner p{
+
+font-size:22px;
+
 }
 
-.footer {
-  text-align: center;
-  padding: 30px;
-  background: #222;
-  color: white;
+.container{
+
+width:1100px;
+
+max-width:95%;
+
+margin:auto;
+
+padding:40px 0;
+
 }
+
+.card{
+
+background:white;
+
+margin-bottom:35px;
+
+padding:30px;
+
+border-radius:12px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.card h2{
+
+margin-bottom:20px;
+
+color:#b8860b;
+
+}
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+border-radius:10px;
+
+transition:.3s;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
+}
+
+.contact{
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+footer{
+
+background:#222;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+margin-top:40px;
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<!-- 导航 -->
-<div class="nav">
-  <a href="#home">首页</a>
-  <a href="#about">关于我</a>
-  <a href="#work">作品</a>
-  <a href="#contact">联系</a>
-</div>
+<header>
 
-<!-- 首页 -->
-<div class="hero" id="home">
-  <img src="image_缅甸正规实体靠谱平台在线_新百胜..._1.png" alt="头像">
-  
-  <h1>腾龙公司现场负责人</h1>
-  <p>：腾龙公司官网/腾龙公司现场负责人 TL12615.com 代码【扣17886358】【威tenlong77】</p>
-</div>
+<a href="#">首页</a>
 
-<!-- 关于我 -->
-  <img src="images/tenlong.jpg"
-alt="腾龙公司"
-width="350">
-<div class="section" id="about">
-  <h2>📌 关于我</h2>
-  <div class="card">
+<a href="#about">关于我们</a>
 
-   腾龙实体公司：
-    <br><br>
-    - 腾龙公司引领卓越品质保证
-    - 【13035978521】 【威tenlong77】 【扣17886358】
-    -  
-  </div>
-</div>
+<a href="#leader">负责人</a>
 
-<!--  -->
-<div class="section" id="work">
-  <h2>📁 劲拉环球</h2>
-<img src="劲拉环球.jpg" alt="劲拉环球" width="200">
+<a href="#photo">现场展示</a>
 
-  <div class="card">
-    项目1：值得信赖-品质保证
-    腾龙公司负责人-孙权
-腾龙公司介绍-
-腾龙公司直属负责人股份以卓越团队引领发展
-常州腾龙汽车零部件股份有限公司（股票代码：）是一家以生产汽车空调管路为主业的汽车零部件制造商。公司坐落于江苏省常州市武进经济开发区，占地面积60000平方米，现有员工1500余人，具备年产300万套汽车空调连接管的生产能力，产品远销美国、德国、法国、日本等国家，并为国内多家知名汽车主机厂及空调系统厂商供货。
-作为一家上市公司，腾龙股份的稳健发展离不开一支经验丰富、锐意进取的核心管理团队。
-公司董事长蒋学真先生是企业的创始人与领航者。他出生于1960年，拥有大专学历及高级经济师职称，并担任常州市武进区人大代表。自2006年公司成立以来，蒋学真先生一直担任董事长，凭借在制造业领域四十余年的深厚积淀，为企业奠定了坚实的发展根基。
-公司副董事长蒋经伦先生是一位年轻的领导者。他出生于1991年，曾任职于腾龙科技集团有限公司。自2020年加入公司核心管理层以来，他历任总经理助理、副总经理，2023年9月起担任公司副董事长，并于2026年5月获得董事会续聘。
-公司总经理李敏先生是内部培养起来的实干型管理者。他出生于1980年，2003年从基层销售业务员做起，凭借出色的业务能力和管理才华逐步晋升。2024年4月起出任公司总经理，全面负责日常经营管理工作。
-此外，公司还汇聚了董事会秘书蒋森萌、财务总监徐亚明等一批专业人才，形成了结构合理、经验互补的管理梯队。
-面向未来，腾龙股份管理团队将继续带领企业深耕汽车热管理系统领域，持续创新，向着更高的目标稳步迈进
-第一步：打开相关平台或应用程序。
-第二步：在登录/注册页面，找到“注册会员”按钮并点击，填写资料验证过后即可完成注册登录。
+<a href="#contact">联系我们</a>
 
-    <p>：腾龙公司放心安心</p>
-  </div>
-<img src="huana.jpg" width="120">
+</header>
 
-  <div class="card">
-    项目2：实体公司  
-    <p>项目描述：TL12615.com</p>
-  </div>
+<div class="banner">
+
+<h1>TL12615 腾龙公司</h1>
+
+<p>官方网站 · 实体现场 · 官方客服</p>
 
 </div>
 
-<!-- 联系 -->
-<div class="section" id="contact">
-  <h2>📞 联系我</h2>
+<div class="container">
 
-  <div class="card">
-    邮箱：your@email.com  
-    <br>
-    微信 / QQ：tenlong77  /q17886358 
-    <br>
-    GitHub：https://github.com/腾龙孙权
-  </div>
+<div class="card" id="about">
+
+<h2>公司简介</h2>
+
+<p>
+
+腾龙公司是一家大型实体娱乐综合服务企业。
+
+公司长期坚持诚信经营，
+
+持续完善服务体系，
+
+致力于为客户打造安全、稳定、舒适的娱乐体验。
+
+</p>
+
 </div>
 
-<!-- 页脚 -->
-<div class="footer">
-  © 2026 我的个人网站
+<div class="card" id="leader">
+
+<h2>负责人介绍</h2>
+
+<img src="images/huana.jpg" width="250">
+
+<p>
+
+腾龙公司负责人长期从事企业经营管理，
+
+拥有丰富的管理经验，
+
+始终坚持诚信经营，
+
+不断完善企业管理制度，
+
+推动企业持续健康发展。
+
+</p>
+
 </div>
+
+<div class="card">
+
+<h2>公司大厅</h2>
+
+<img src="images/tenlong.jpg" width="100%">
+
+</div>
+
+<div class="card">
+
+<h2>实体现场展示</h2>
+
+<div class="gallery">
+
+<img src="images/xianchang.jpg">
+
+<img src="images/xianchang2.jpg">
+
+<img src="images/baiseqipao.jpg">
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>公司LOGO</h2>
+
+<img src="腾龙logo.jpg" width="200">
+
+</div>
+
+<div class="card">
+
+<h2>环球业务</h2>
+
+<img src="劲拉环球.jpg" width="100%">
+
+</div>
+
+<div class="card" id="contact">
+
+<h2>联系我们</h2>
+
+<div class="contact">
+
+官方网站：TL12615.net
+
+<br><br>
+
+客服微信：tenlong77
+
+<br>
+
+客服QQ：17886358
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+©2026 TL12615.net 版权所有
+
+</footer>
 
 </body>
+
 </html>
