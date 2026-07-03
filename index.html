@@ -3,350 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="baidu-site-verification" content="codeva-FeaTgtxisZ" />
-    <title>腾龙游戏公司官网TL12615.com | 休闲娱乐</title>
-    <meta name="keywords" content="腾龙公司客服13035978521,腾龙游戏,官方游戏">
-    <meta name="description" content="腾龙公司官网TL12615.com 游戏负责人[微tenlong77]。">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>腾龙公司游戏 - 首页</title>
     <style>
-        /* 全局重置 */
+        /* ===== 全局重置 ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Noto Sans SC', sans-serif;
-            scroll-behavior: smooth;
         }
+
         body {
-            background: #f6f6f6;
-            color: #333;
-            overflow-x: hidden;
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, Arial, sans-serif;
+            background: #0b1219;
+            color: #e8edf3;
+            line-height: 1.6;
         }
-        /* 顶部导航 */
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== 头部 ===== */
         header {
-            background: #1a1a2e;
-            padding: 16px 40px;
+            background: #0f1a26;
+            padding: 16px 0;
+            border-bottom: 3px solid #f0b429;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 10px;
         }
-        header .logo {
-            color: #e9b640;
-            font-size: 24px;
-            font-weight: 700;
-        }
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 24px;
-            font-size: 14px;
-        }
-        header nav a:hover {
-            color: #e9b640;
-        }
-        /* 横幅 Banner - 使用图片 */
-        .banner {
-            position: relative;
-            color: #fff;
-            text-align: center;
-            padding: 0;
-            height: 500px;
+
+        .logo-area {
             display: flex;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            gap: 12px;
         }
-        .banner img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        .logo-area img {
+            height: 50px;
+            width: auto;
         }
-        .banner .overlay {
-            position: relative;
-            z-index: 2;
-            background: rgba(0,0,0,0.5);
-            padding: 60px 20px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .banner .overlay h1 {
-            font-size: 48px;
+
+        .logo-area h1 {
+            font-size: 26px;
             font-weight: 700;
+            letter-spacing: 1px;
         }
-        .banner .overlay h1 span {
-            color: #e9b640;
+
+        .logo-area h1 span {
+            color: #f0b429;
         }
-        .banner .overlay p {
-            margin-top: 16px;
-            font-size: 20px;
-            color: #eee;
+
+        .btn-register {
+            background: #f0b429;
+            color: #0b1219 !important;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
         }
-        /* 通用容器 */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
+
+        .btn-register:hover {
+            background: #d49c1e;
+            transform: scale(1.05);
         }
-        /* 关于我们 */
-        #about h2 {
+
+        /* ===== 主视觉（Hero） ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(20,43,59,0.92), rgba(31,58,75,0.92)), url('images/huana.jpg') center/cover no-repeat;
+            padding: 70px 30px;
+            border-radius: 18px;
+            margin: 30px 0 40px;
             text-align: center;
-            font-size: 32px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
             margin-bottom: 12px;
         }
-        #about .sub {
-            text-align: center;
-            color: #888;
-            margin-bottom: 40px;
+
+        .hero h2 span {
+            color: #f0b429;
         }
-        #about .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-        #about .card {
-            background: #fff;
-            padding: 28px 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
-        #about .card h3 {
+
+        .hero p {
             font-size: 20px;
-            margin-bottom: 10px;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            opacity: 0.9;
         }
-        #about .card p {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        /* 酒店展示 */
-        #hotel {
-            background: #fff;
-        }
-        #hotel h2 {
-            text-align: center;
-            font-size: 32px;
+
+        /* ===== 公司简介区块 ===== */
+        .about-simple {
+            background: #182734;
+            padding: 35px 30px;
+            border-radius: 16px;
             margin-bottom: 40px;
+            border-left: 6px solid #f0b429;
         }
-        #hotel .grid {
+
+        .about-simple h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .about-simple p {
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 10px;
+            color: #cbd5e1;
+        }
+
+        /* ===== 游戏作品展示 ===== */
+        .section-title {
+            font-size: 30px;
+            margin: 40px 0 25px;
+            border-left: 6px solid #f0b429;
+            padding-left: 18px;
+        }
+
+        .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
         }
-        #hotel .item {
-            background: #f9f9f9;
-            border-radius: 12px;
+
+        .game-card {
+            background: #182734;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        #hotel .item img {
+
+        .game-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .game-card img {
             width: 100%;
-            height: 200px;
+            height: 190px;
             object-fit: cover;
+            background: #2a3a4a;
+            display: block;
         }
-        #hotel .item .info {
-            padding: 20px;
+
+        .game-card .info {
+            padding: 18px;
         }
-        #hotel .item .info h3 {
-            font-size: 18px;
+
+        .game-card .info h3 {
+            font-size: 20px;
             margin-bottom: 6px;
         }
-        #hotel .item .info p {
-            color: #888;
+
+        .game-card .info p {
+            color: #9aaebf;
             font-size: 14px;
         }
-        /* 图片展示画廊 */
-        #gallery {
-            background: #f6f6f6;
+
+        /* ===== 联系方式 ===== */
+        .contact-area {
+            background: #182734;
+            padding: 35px 30px;
+            border-radius: 16px;
+            margin: 40px 0;
         }
-        #gallery h2 {
+
+        .contact-area h3 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .contact-item {
+            background: #0f1a26;
+            padding: 8px 18px 8px 14px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            border: 1px solid #1e3142;
+        }
+
+        .contact-item .label {
+            color: #9aaebf;
+        }
+
+        .contact-item .value {
+            color: #f0b429;
+            font-weight: 500;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid #f0b429;
+            color: #f0b429;
+            padding: 2px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #f0b429;
+            color: #0b1219;
+        }
+
+        /* ===== 页脚 ===== */
+        footer {
+            background: #0f1a26;
+            padding: 25px 0;
+            margin-top: 20px;
+            border-top: 1px solid #1e3142;
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-        #gallery .sub {
-            text-align: center;
-            color: #888;
-            margin-bottom: 40px;
-        }
-        #gallery .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-        }
-        #gallery .grid img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-        #gallery .grid img:hover {
-            transform: scale(1.03);
-        }
-        /* 页脚 */
-        #footer {
-            background: #1a1a2e;
-            color: #aaa;
-            text-align: center;
-            padding: 32px 20px;
+            color: #6a7f92;
             font-size: 14px;
         }
-        #footer span {
-            color: #e9b640;
+
+        footer a {
+            color: #f0b429;
         }
-        /* 响应式 */
+
+        /* ===== 响应式 ===== */
         @media (max-width: 768px) {
-            header {
+            .header-flex {
                 flex-direction: column;
-                gap: 12px;
+                align-items: center;
             }
-            header nav a {
-                margin: 0 10px;
+
+            .hero h2 {
+                font-size: 30px;
             }
-            .banner {
-                height: 300px;
+
+            .hero p {
+                font-size: 17px;
             }
-            .banner .overlay h1 {
-                font-size: 28px;
+
+            .contact-items {
+                flex-direction: column;
+                align-items: stretch;
             }
-            .banner .overlay p {
-                font-size: 16px;
+
+            .contact-item {
+                justify-content: space-between;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== 顶部导航 ===== -->
     <header>
-        <div class="logo">✦ TL12615</div>
-        <nav>
-            <a href="#about">关于我们</a>
-            <a href="#hotel">酒店客房</a>
-            <a href="#gallery">酒店环境</a>
-            <a href="#footer">联系我们</a>
-        </nav>
+        <div class="container header-flex">
+            <div class="logo-area">
+                <img src="images/telonglgo.jpg" alt="腾龙游戏">
+                <h1>腾龙<span>游戏</span></h1>
+            </div>
+            <!-- 唯一的“注册”按钮，直接跳转到您的游戏网站 -->
+            <a href="http://tl12615.com" target="_blank" class="btn-register">🎮 立即注册</a>
+        </div>
     </header>
 
-    <!-- ===== 横幅 Banner ===== -->
-    <section class="banner">
-        <img src="tenlong1.jpg" alt="腾龙酒店 banner">
-        <div class="overlay">
-            <h1>腾龙游戏<span>腾龙公司</span> 官网</h1>
-            <p>腾龙公司游戏注册【q17886358】 · 【tenlong77】【TL12615.com】老牌企业 ·品质保障 </p>
-        </div>
-    </section>
+    <div class="container">
 
-    <!-- ===== 关于我们 ===== -->
-    <section id="about" class="container">
-        <h2>关于腾龙</h2>
-        <p class="sub">腾龙公司游戏官网五星级酒店，致力于为宾客提供高品质住宿体验，威【tenlong77】q【17886358】</p>
-        <div class="grid">
-            <div class="card">
-                <h3>🏨 【威tenlong77】【q17886358】</h3>
-                <p>20年游戏平台，信誉保障，真人现场验证。</p>
+        <!-- 主视觉 -->
+        <section class="hero">
+            <h2>专注 <span>游戏开发 / 发行 / 运营</span></h2>
+            <p>腾龙游戏公司【威tenlong77】致力于打造高品质游戏产品【q17886358】，覆盖手游与端游领域【TL12615.com】。</p>
+        </section>
+
+        <!-- 公司简介 -->
+        <div class="about-simple">
+            <h3>🏢 关于腾龙</h3>
+            <p>果敢腾龙游戏公司成立于 2018 年，以技术驱动、创意为核心，团队汇聚资深游戏设计师、程序工程师和艺术家。我们坚信“好游戏没有捷径”，已上线多款畅销作品，累计用户超过 500 万。</p>
+            <p><strong>愿景：</strong>成为世界级的游戏创造者，用互动艺术连接人心。</p>
+        </div>
+
+        <!-- 游戏产品 -->
+        <h2 class="section-title">🎮 热门游戏</h2>
+        <div class="game-grid">
+            <div class="game-card">
+                <img src="images/heise1.jpg" alt="龙之传说">
+                <div class="info">
+                    <h3>龙之传说</h3>
+                    <p>史诗 RPG，探索龙族秘境</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>💼 商务合作</h3>
-                <p>13035978521，。</p>
+            <div class="game-card">
+                <img src="images/baise1.jpg" alt="星际征服">
+                <div class="info">
+                    <h3>星际征服</h3>
+                    <p>即时策略，银河争霸</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>🍽️ 餐饮娱乐</h3>
-                <p>好玩游戏各类在线。</p>
+            <div class="game-card">
+                <img src="images/heise1.jpg" alt="奇幻花园">
+                <div class="info">
+                    <h3>奇幻花园</h3>
+                    <p>治愈休闲，建造梦幻花园</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="images/baise1.jpg" alt="暗影突袭">
+                <div class="info">
+                    <h3>暗影突袭</h3>
+                    <p>潜行暗杀，动作爽快</p>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- ===== 酒店客房 ===== -->
-    <section id="hotel">
+        <!-- 联系方式（带复制功能） -->
+        <div class="contact-area">
+            <h3>📞 联系我们</h3>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <span class="label">📱 微信</span>
+                    <span class="value" id="wechat">tenlong77</span>
+                    <button class="copy-btn" onclick="copyText('wechat')">复制</button>
+                </div>
+                <div class="contact-item">
+                    <span class="label">💬 QQ</span>
+                    <span class="value" id="qq">17886358</span>
+                    <button class="copy-btn" onclick="copyText('qq')">复制</button>
+                </div>
+                <div class="contact-item">
+                    <span class="label">📧 邮箱</span>
+                    <span class="value" id="email">88417513@qq.com</span>
+                    <button class="copy-btn" onclick="copyText('email')">复制</button>
+                </div>
+                <div class="contact-item">
+                    <span class="label">📞 电话</span>
+                    <span class="value" id="phone">13035978521</span>
+                    <button class="copy-btn" onclick="copyText('phone')">复制</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
         <div class="container">
-            <h2>精选客房</h2>
-            <div class="grid">
-                <div class="item">
-                    <img src="honse1.jpg" alt="豪华大床房">
-                    <div class="info">
-                        <h3>豪华大床房</h3>
-                        <p>宽敞空间 · 城市景观</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="honse2.jpg" alt="商务套房">
-                    <div class="info">
-                        <h3>商务套房</h3>
-                        <p>独立会客区 · 办公便利</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="heise1.jpg" alt="行政套房">
-                    <div class="info">
-                        <h3>行政套房</h3>
-                        <p>尊贵服务 · 顶级配置</p>
-                    </div>
-                </div>
-            </div>
+            <p>© 2026 腾龙游戏公司 · 网站：<a href="http://sq1122.com" target="_blank">sq1122.com</a></p>
+            <p style="margin-top:6px;">
+                <a href="http://tl12615.com" target="_blank" style="color:#f0b429; font-weight:600;">👉 立即注册，开启游戏之旅</a>
+            </p>
         </div>
-    </section>
-
-    <!-- ===== 酒店环境画廊 ===== -->
-    <section id="gallery">
-        <div class="container">
-            <h2>酒店环境</h2>
-            <p class="sub">优雅舒适 · 高端品质</p>
-            <div class="grid">
-                <img src="baise2.jpg" alt="酒店环境 1">
-                <img src="bause1.jpg" alt="酒店环境 2">
-                <img src="wuxin1.jpg" alt="酒店环境 3">
-                <img src="wuxin2.jpg" alt="酒店环境 4">
-                <img src="wuxin3.jpg" alt="酒店环境 5">
-                <img src="wuxin4.jpg" alt="酒店环境 6">
-                <img src="wuxin5.jpg" alt="酒店环境 7">
-                <img src="tenlong2.jpg" alt="酒店环境 8">
-            </div>
-        </div>
-    </section>
-        <!-- ===== 联系我们（醒目区域） ===== -->
-    <section id="contact" style="background: linear-gradient(135deg, #1a1a2e, #2a1a3e); padding: 50px 20px;">
-        <div class="container" style="text-align: center;">
-            <h2 style="color: #e9b640; font-size: 32px; margin-bottom: 10px;">📞 联系我们</h2>
-            <p style="color: #ccc; margin-bottom: 30px; font-size: 16px;">尊享高端酒店服务 · 欢迎咨询预订</p>
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
-                <!-- 电话 -->
-                <div style="background: rgba(255,255,255,0.08); padding: 18px 30px; border-radius: 12px; min-width: 160px; border: 1px solid rgba(233, 182, 64, 0.3);">
-                    <div style="font-size: 28px;">📞</div>
-                    <div style="color: #fff; font-size: 18px; font-weight: 500; margin-top: 4px;">企鹅</div>
-                    <div style="color: #e9b640; font-size: 20px; font-weight: 700;">17886358<,<br>13035978521/div>
-                </div>
-                <!-- 商务微信 -->
-                <div style="background: rgba(255,255,255,0.08); padding: 18px 30px; border-radius: 12px; min-width: 160px; border: 1px solid rgba(233, 182, 64, 0.3);">
-                    <div style="font-size: 28px;">💬</div>
-                    <div style="color: #fff; font-size: 18px; font-weight: 500; margin-top: 4px;">商务微信</div>
-                    <div style="color: #e9b640; font-size: 20px; font-weight: 700;">tenlong77</div>
-                </div>
-                <!-- 邮箱/其他 -->
-                <div style="background: rgba(255,255,255,0.08); padding: 18px 30px; border-radius: 12px; min-width: 160px; border: 1px solid rgba(233, 182, 64, 0.3);">
-                    <div style="font-size: 28px;">🏨</div>
-                    <div style="color: #fff; font-size: 18px; font-weight: 500; margin-top: 4px;">酒店官网</div>
-                    <div style="color: #e9b640; font-size: 18px; font-weight: 700;">TL12615.com</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 页脚 ===== -->
-    <footer id="footer">
-        <p>© 2026 <span>腾龙公司</span> TL12615.com · 高端酒店 · 品质服务</p>
-        <p style="margin-top:6px;font-size:12px;color:#666;">企鹅【17886358】 · 商务版【tenlong77】</p>
     </footer>
 
+    <script>
+        // 复制功能（兼容所有浏览器）
+        function copyText(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('✅ 已复制：' + text);
+                }).catch(() => {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                alert('✅ 已复制：' + text);
+            } catch (e) {
+                alert('❌ 复制失败，请手动复制。');
+            }
+            document.body.removeChild(textarea);
+        }
+    </script>
+
 </body>
-</html>  
+</html>
