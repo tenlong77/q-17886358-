@@ -5,169 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>腾龙公司游戏 - 首页</title>
     <style>
-        /* ----- 新增按钮样式 ----- */
-.btn-contact {
-  padding: 8px 22px;
-  background: #f5a623;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
-  box-shadow: 0 2px 8px rgba(245, 166, 35, 0.35);
-}
-.btn-contact:hover {
-  background: #e0941a;
-  transform: translateY(-1px);
-}
-.btn-contact:active {
-  transform: translateY(0);
-}
-
-/* ----- 模态框遮罩 ----- */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.50);
-  backdrop-filter: blur(4px);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.25s ease;
-}
-.modal-overlay.active {
-  display: flex;
-}
-
-/* ----- 模态框卡片 ----- */
-.modal-card {
-  background: #fff;
-  border-radius: 16px;
-  max-width: 440px;
-  width: 92%;
-  padding: 32px 28px 28px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.30);
-  animation: slideUp 0.30s ease;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.modal-header h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #1e2a3a;
-  margin: 0;
-}
-.modal-header .close-btn {
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: #f1f3f5;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.modal-header .close-btn:hover {
-  background: #e9ecef;
-}
-
-.contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin: 6px 0 4px;
-}
-.contact-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f8f9fc;
-  border-radius: 10px;
-  padding: 12px 16px;
-  border: 1px solid #eef1f5;
-}
-.contact-item .label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #4a5a6e;
-  min-width: 64px;
-}
-.contact-item .value {
-  font-size: 15px;
-  font-weight: 600;
-  color: #1e2a3a;
-  flex: 1;
-  margin: 0 12px 0 8px;
-  user-select: all;
-}
-.contact-item .copy-btn {
-  padding: 4px 14px;
-  background: #eef1f5;
-  border: none;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #2b7be4;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.contact-item .copy-btn:hover {
-  background: #dce3ed;
-  color: #1a5fc7;
-}
-
-/* Toast 提示 */
-.toast-tip {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateY(80px);
-  background: #1e2a3a;
-  color: #fff;
-  padding: 10px 28px;
-  border-radius: 40px;
-  font-size: 14px;
-  font-weight: 500;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-  z-index: 99999;
-  pointer-events: none;
-  white-space: nowrap;
-}
-.toast-tip.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
-/* 动画 */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px) scale(0.96); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* 响应式（可选） */
-@media (max-width: 480px) {
-  .modal-card { padding: 24px 18px 22px; }
-  .contact-item { flex-wrap: wrap; gap: 6px 0; }
-  .contact-item .value { flex: 1 1 100%; order: 2; }
-  .contact-item .copy-btn { order: 3; margin-left: auto; }
-}
         /* ===== 全局重置 ===== */
         * {
             margin: 0;
@@ -232,6 +69,7 @@
             color: #f0b429;
         }
 
+        /* ----- 原有注册按钮（保留） ----- */
         .btn-register {
             background: #f0b429;
             color: #0b1219 !important;
@@ -249,9 +87,35 @@
             transform: scale(1.05);
         }
 
+        /* ===== ★★★ 新增：「一键联系负责人」按钮 ★★★ ===== */
+        .btn-contact-chief {
+            background: #2b7be4;
+            color: #fff !important;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 14px rgba(43, 123, 228, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-contact-chief:hover {
+            background: #1a5fc7;
+            transform: scale(1.05);
+        }
+
+        .btn-contact-chief:active {
+            transform: scale(0.97);
+        }
+
         /* ===== 主视觉（Hero） ===== */
         .hero {
-            background: linear-gradient(135deg, rgba(20,43,59,0.92), rgba(31,58,75,0.92)), url('images/huana.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(20, 43, 59, 0.92), rgba(31, 58, 75, 0.92)), url('images/huana.jpg') center/cover no-repeat;
             padding: 70px 30px;
             border-radius: 18px;
             margin: 30px 0 40px;
@@ -400,19 +264,195 @@
             color: #0b1219;
         }
 
-        /* ===== 页脚 ===== */
-        footer {
-            background: #0f1a26;
-            padding: 25px 0;
-            margin-top: 20px;
-            border-top: 1px solid #1e3142;
-            text-align: center;
-            color: #6a7f92;
-            font-size: 14px;
+        /* ===== ★★★ 新增：模态框（弹窗）样式 ★★★ ===== */
+        /* 遮罩层 */
+        .modal-overlay {
+            display: none;
+            /* 默认隐藏 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.60);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: modalFadeIn 0.25s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
         }
 
-        footer a {
+        /* 卡片 */
+        .modal-card {
+            background: #1a2a3a;
+            border-radius: 20px;
+            max-width: 460px;
+            width: 92%;
+            padding: 32px 28px 28px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.50);
+            border: 1px solid #2d4055;
+            animation: modalSlideUp 0.30s ease;
+        }
+
+        /* 头部 */
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+        .modal-header h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #f0f4f8;
+            margin: 0;
+            letter-spacing: 0.3px;
+        }
+        .modal-header h3 span {
             color: #f0b429;
+        }
+        .modal-header .close-btn {
+            width: 34px;
+            height: 34px;
+            border: none;
+            background: #2d4055;
+            border-radius: 50%;
+            font-size: 22px;
+            line-height: 1;
+            color: #b0c4d8;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-header .close-btn:hover {
+            background: #3d526a;
+            color: #fff;
+        }
+
+        /* 联系方式列表 */
+        .modal-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 4px 0 6px;
+        }
+
+        .modal-contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0f1a26;
+            border-radius: 12px;
+            padding: 14px 18px;
+            border: 1px solid #253849;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .modal-contact-item:hover {
+            border-color: #f0b429;
+            background: #14222f;
+        }
+
+        .modal-contact-item .m-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #9aaebf;
+            min-width: 60px;
+            letter-spacing: 0.3px;
+        }
+
+        .modal-contact-item .m-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f0f4f8;
+            flex: 1;
+            margin: 0 12px 0 8px;
+            word-break: break-all;
+            user-select: all;
+        }
+
+        .modal-contact-item .m-copy-btn {
+            padding: 5px 16px;
+            background: #253849;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #f0b429;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .modal-contact-item .m-copy-btn:hover {
+            background: #f0b429;
+            color: #0b1219;
+        }
+        .modal-contact-item .m-copy-btn:active {
+            transform: scale(0.94);
+        }
+
+        /* 底部提示 */
+        .modal-footer-tip {
+            margin: 20px 0 0;
+            font-size: 13px;
+            color: #6a7f92;
+            text-align: center;
+            border-top: 1px solid #253849;
+            padding-top: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        /* ----- Toast 提示（复制成功） ----- */
+        .toast-tip {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #1e2a3a;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.40);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+            z-index: 99999;
+            pointer-events: none;
+            border: 1px solid #2d4055;
+            white-space: nowrap;
+        }
+        .toast-tip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ----- 动画关键帧 ----- */
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes modalSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         /* ===== 响应式 ===== */
@@ -438,20 +478,77 @@
             .contact-item {
                 justify-content: space-between;
             }
+
+            /* 模态框响应式 */
+            .modal-card {
+                padding: 24px 18px 22px;
+            }
+            .modal-contact-item {
+                flex-wrap: wrap;
+                gap: 6px 0;
+                padding: 12px 14px;
+            }
+            .modal-contact-item .m-label {
+                min-width: 50px;
+                font-size: 13px;
+            }
+            .modal-contact-item .m-value {
+                font-size: 14px;
+                margin: 0 6px 0 4px;
+                order: 2;
+                flex: 1 1 100%;
+            }
+            .modal-contact-item .m-copy-btn {
+                order: 3;
+                margin-left: auto;
+                font-size: 12px;
+                padding: 4px 12px;
+            }
+            .btn-contact-chief {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+            .btn-register {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+            .toast-tip {
+                font-size: 13px;
+                padding: 10px 22px;
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-card {
+                padding: 20px 14px 18px;
+            }
+            .modal-header h3 {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
+
 <body>
 
+    <!-- ============================================================
+    ★★★ 头部（已添加「一键联系负责人」按钮） ★★★
+    ============================================================ -->
     <header>
         <div class="container header-flex">
             <div class="logo-area">
                 <img src="images/telonglgo.jpg" alt="腾龙游戏">
                 <h1>腾龙<span>游戏</span></h1>
             </div>
-            <!-- 唯一的“注册”按钮，直接跳转到您的游戏网站 -->
-            <a href="http://tl12615.com" target="_blank" class="btn-register">🎮 立即注册</a>
-             <button class="btn-contact" id="contactTriggerBtn">📞 一键联系负责人</button>
+            <!-- 按钮组：原有注册按钮 + 新增联系负责人按钮 -->
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                <a href="http://tl12615.com" target="_blank" class="btn-register">🎮 立即注册</a>
+                <!-- ★★★ 新增：「一键联系负责人」按钮 ★★★ -->
+                <button class="btn-contact-chief" id="contactTriggerBtn">
+                    📞 联系负责人
+                </button>
+            </div>
         </div>
     </header>
 
@@ -459,7 +556,7 @@
 
         <!-- 主视觉 -->
         <section class="hero">
-            <h2>腾龙专注 <span>游戏开发 / 真人游戏 / 线上运营</span></h2>
+            <h2>专注 <span>游戏开发 / 发行 / 运营</span></h2>
             <p>腾龙游戏公司【威tenlong77】致力于打造高品质游戏产品【q17886358】，覆盖手游与端游领域【TL12615.com】。</p>
         </section>
 
@@ -503,7 +600,7 @@
             </div>
         </div>
 
-        <!-- 联系方式（带复制功能） -->
+        <!-- 联系方式（原有，保留） -->
         <div class="contact-area">
             <h3>📞 联系我们</h3>
             <div class="contact-items">
@@ -541,8 +638,64 @@
         </div>
     </footer>
 
+    <!-- ============================================================
+    ★★★ 新增：模态框（联系方式弹窗） ★★★
+    放置在 </body> 之前
+    ============================================================ -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-card">
+
+            <!-- 头部 -->
+            <div class="modal-header">
+                <h3>📋 联系<span>负责人</span></h3>
+                <button class="close-btn" id="closeModalBtn" aria-label="关闭">✕</button>
+            </div>
+
+            <!-- 三个联系方式 -->
+            <div class="modal-contact-list">
+
+                <!-- 1. 微信号 -->
+                <div class="modal-contact-item">
+                    <span class="m-label">📱 微信</span>
+                    <span class="m-value" id="mWechat">tenlong77</span>
+                    <button class="m-copy-btn" data-target="mWechat">复制</button>
+                </div>
+
+                <!-- 2. QQ号 -->
+                <div class="modal-contact-item">
+                    <span class="m-label">💬 QQ</span>
+                    <span class="m-value" id="mQQ">q17886358</span>
+                    <button class="m-copy-btn" data-target="mQQ">复制</button>
+                </div>
+
+                <!-- 3. 官网 -->
+                <div class="modal-contact-item">
+                    <span class="m-label">🌐 官网</span>
+                    <span class="m-value" id="mUrl">TL12615.com</span>
+                    <button class="m-copy-btn" data-target="mUrl">复制</button>
+                </div>
+
+            </div>
+
+            <!-- 底部提示 -->
+            <div class="modal-footer-tip">
+                点击「复制」或直接点击联系方式文本即可复制
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    Toast 复制成功提示
+    ============================================================ -->
+    <div class="toast-tip" id="toastTip">✅ 已复制到剪贴板</div>
+
+    <!-- ============================================================
+    ★★★ 原有脚本（保留）+ 新增模态框脚本 ★★★
+    ============================================================ -->
     <script>
-        // 复制功能（兼容所有浏览器）
+        // =============================================================
+        // 原有复制功能（保留，用于页面下方联系方式）
+        // =============================================================
         function copyText(elementId) {
             const text = document.getElementById(elementId).innerText;
             if (navigator.clipboard) {
@@ -569,122 +722,137 @@
             }
             document.body.removeChild(textarea);
         }
+
+        // =============================================================
+        // ★★★ 新增：模态框控制 + 复制（带 Toast 提示） ★★★
+        // =============================================================
+        (function() {
+            'use strict';
+
+            // ----- DOM 引用 -----
+            const modal = document.getElementById('contactModal');
+            const triggerBtn = document.getElementById('contactTriggerBtn');
+            const closeBtn = document.getElementById('closeModalBtn');
+            const toast = document.getElementById('toastTip');
+            let toastTimer = null;
+
+            // ----- 打开模态框 -----
+            function openModal() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // ----- 关闭模态框 -----
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // ----- 显示 Toast -----
+            function showToast(msg) {
+                toast.textContent = msg || '✅ 已复制到剪贴板';
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(function() {
+                    toast.classList.remove('show');
+                    toastTimer = null;
+                }, 2200);
+            }
+
+            // ----- 复制（模态框专用，带 Toast） -----
+            function copyModalText(elementId) {
+                const el = document.getElementById(elementId);
+                if (!el) return;
+                const text = el.textContent.trim();
+                if (!text) return;
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text)
+                        .then(function() {
+                            showToast('✅ 已复制：' + text);
+                        })
+                        .catch(function() {
+                            fallbackCopyModal(text);
+                        });
+                } else {
+                    fallbackCopyModal(text);
+                }
+            }
+
+            function fallbackCopyModal(text) {
+                try {
+                    const input = document.createElement('input');
+                    input.value = text;
+                    input.style.position = 'fixed';
+                    input.style.opacity = '0';
+                    input.style.left = '-9999px';
+                    document.body.appendChild(input);
+                    input.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(input);
+                    showToast('✅ 已复制：' + text);
+                } catch (e) {
+                    showToast('⚠️ 复制失败，请手动复制');
+                }
+            }
+
+            // ----- 绑定事件 -----
+
+            // 1. 触发按钮 -> 打开
+            if (triggerBtn) {
+                triggerBtn.addEventListener('click', openModal);
+            }
+
+            // 2. 关闭按钮 -> 关闭
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+
+            // 3. 点击遮罩 -> 关闭
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // 4. ESC 键 -> 关闭
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+
+            // 5. 模态框内「复制」按钮 -> 复制
+            document.addEventListener('click', function(e) {
+                const btn = e.target.closest('.m-copy-btn');
+                if (!btn) return;
+                const targetId = btn.getAttribute('data-target');
+                if (targetId) {
+                    e.preventDefault();
+                    copyModalText(targetId);
+                }
+            });
+
+            // 6. 点击联系方式文本本身 -> 也可复制（便捷操作）
+            document.addEventListener('click', function(e) {
+                const valEl = e.target.closest('.modal-contact-item .m-value');
+                if (!valEl) return;
+                const parentItem = valEl.closest('.modal-contact-item');
+                if (!parentItem) return;
+                const copyBtn = parentItem.querySelector('.m-copy-btn');
+                if (copyBtn) {
+                    const targetId = copyBtn.getAttribute('data-target');
+                    if (targetId) {
+                        copyModalText(targetId);
+                    }
+                }
+            });
+
+            console.log('✅ 「一键联系负责人」模态框已加载');
+        })();
     </script>
-    <script>
-    <!-- ======== 模态框（联系方式弹窗） ======== -->
-<div class="modal-overlay" id="contactModal">
-  <div class="modal-card">
-    <div class="modal-header">
-      <h3>📋 联系负责人</h3>
-      <button class="close-btn" id="closeModalBtn">✕</button>
-    </div>
-    <div class="contact-list">
-      <div class="contact-item">
-        <span class="label">微信号</span>
-        <span class="value" id="contactWechat">tenlong77</span>
-        <button class="copy-btn" data-target="contactWechat">复制</button>
-      </div>
-      <div class="contact-item">
-        <span class="label">QQ号</span>
-        <span class="value" id="contactQQ">17886358</span>
-        <button class="copy-btn" data-target="contactQQ">复制</button>
-      </div>
-      <div class="contact-item">
-        <span class="label">官网</span>
-        <span class="value" id="contactUrl">TL12615.com</span>
-        <button class="copy-btn" data-target="contactUrl">复制</button>
-      </div>
-    </div>
-    <p style="margin:18px 0 0; font-size:13px; color:#8a9aa8; text-align:center; border-top:1px solid #eef1f5; padding-top:16px;">
-      点击「复制」即可复制对应信息
-    </p>
-  </div>
-</div>
-
-<!-- Toast 提示 -->
-<div class="toast-tip" id="toastTip">✅ 已复制到剪贴板</div>
- </script>
-    <script>
-  (function() {
-    const modal = document.getElementById('contactModal');
-    const trigger = document.getElementById('contactTriggerBtn');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const toast = document.getElementById('toastTip');
-    let timer = null;
-
-    function openModal() {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    function showToast(msg) {
-      toast.textContent = msg || '✅ 已复制到剪贴板';
-      toast.classList.add('show');
-      clearTimeout(timer);
-      timer = setTimeout(() => toast.classList.remove('show'), 2200);
-    }
-
-    function copyText(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const text = el.textContent.trim();
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text)
-          .then(() => showToast('✅ 已复制：' + text))
-          .catch(() => fallbackCopy(text));
-      } else {
-        fallbackCopy(text);
-      }
-    }
-    function fallbackCopy(text) {
-      try {
-        const input = document.createElement('input');
-        input.value = text;
-        input.style.position = 'fixed';
-        input.style.opacity = '0';
-        input.style.left = '-9999px';
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-        showToast('✅ 已复制：' + text);
-      } catch (e) {
-        showToast('⚠️ 复制失败，请手动复制');
-      }
-    }
-
-    trigger.addEventListener('click', openModal);
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
-
-    // 复制按钮事件
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.copy-btn');
-      if (btn) {
-        e.preventDefault();
-        const targetId = btn.getAttribute('data-target');
-        if (targetId) copyText(targetId);
-      }
-    });
-
-    // 点击联系方式文本也可复制
-    document.addEventListener('click', (e) => {
-      const val = e.target.closest('.contact-item .value');
-      if (val) {
-        const item = val.closest('.contact-item');
-        const btn = item?.querySelector('.copy-btn');
-        if (btn) {
-          const id = btn.getAttribute('data-target');
-          if (id) copyText(id);
-        }
-      }
-    });
-  })();
-</script>
 
 </body>
 </html>
