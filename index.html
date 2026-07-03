@@ -5,6 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>腾龙公司游戏 - 首页</title>
     <style>
+        /* ----- 新增按钮样式 ----- */
+.btn-contact {
+  padding: 8px 22px;
+  background: #f5a623;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(245, 166, 35, 0.35);
+}
+.btn-contact:hover {
+  background: #e0941a;
+  transform: translateY(-1px);
+}
+.btn-contact:active {
+  transform: translateY(0);
+}
+
+/* ----- 模态框遮罩 ----- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.50);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.25s ease;
+}
+.modal-overlay.active {
+  display: flex;
+}
+
+/* ----- 模态框卡片 ----- */
+.modal-card {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 440px;
+  width: 92%;
+  padding: 32px 28px 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+  animation: slideUp 0.30s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.modal-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e2a3a;
+  margin: 0;
+}
+.modal-header .close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f1f3f5;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-header .close-btn:hover {
+  background: #e9ecef;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 6px 0 4px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fc;
+  border-radius: 10px;
+  padding: 12px 16px;
+  border: 1px solid #eef1f5;
+}
+.contact-item .label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a5a6e;
+  min-width: 64px;
+}
+.contact-item .value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e2a3a;
+  flex: 1;
+  margin: 0 12px 0 8px;
+  user-select: all;
+}
+.contact-item .copy-btn {
+  padding: 4px 14px;
+  background: #eef1f5;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2b7be4;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-item .copy-btn:hover {
+  background: #dce3ed;
+  color: #1a5fc7;
+}
+
+/* Toast 提示 */
+.toast-tip {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #1e2a3a;
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 99999;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.toast-tip.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 响应式（可选） */
+@media (max-width: 480px) {
+  .modal-card { padding: 24px 18px 22px; }
+  .contact-item { flex-wrap: wrap; gap: 6px 0; }
+  .contact-item .value { flex: 1 1 100%; order: 2; }
+  .contact-item .copy-btn { order: 3; margin-left: auto; }
+}
         /* ===== 全局重置 ===== */
         * {
             margin: 0;
@@ -288,6 +451,7 @@
             </div>
             <!-- 唯一的“注册”按钮，直接跳转到您的游戏网站 -->
             <a href="http://tl12615.com" target="_blank" class="btn-register">🎮 立即注册</a>
+             <button class="btn-contact" id="contactTriggerBtn">📞 一键联系负责人</button>
         </div>
     </header>
 
@@ -295,7 +459,7 @@
 
         <!-- 主视觉 -->
         <section class="hero">
-            <h2>专注 <span>游戏开发 / 发行 / 运营</span></h2>
+            <h2>腾龙专注 <span>游戏开发 / 真人游戏 / 线上运营</span></h2>
             <p>腾龙游戏公司【威tenlong77】致力于打造高品质游戏产品【q17886358】，覆盖手游与端游领域【TL12615.com】。</p>
         </section>
 
@@ -406,6 +570,121 @@
             document.body.removeChild(textarea);
         }
     </script>
+    <script>
+    <!-- ======== 模态框（联系方式弹窗） ======== -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>📋 联系负责人</h3>
+      <button class="close-btn" id="closeModalBtn">✕</button>
+    </div>
+    <div class="contact-list">
+      <div class="contact-item">
+        <span class="label">微信号</span>
+        <span class="value" id="contactWechat">tenlong77</span>
+        <button class="copy-btn" data-target="contactWechat">复制</button>
+      </div>
+      <div class="contact-item">
+        <span class="label">QQ号</span>
+        <span class="value" id="contactQQ">17886358</span>
+        <button class="copy-btn" data-target="contactQQ">复制</button>
+      </div>
+      <div class="contact-item">
+        <span class="label">官网</span>
+        <span class="value" id="contactUrl">TL12615.com</span>
+        <button class="copy-btn" data-target="contactUrl">复制</button>
+      </div>
+    </div>
+    <p style="margin:18px 0 0; font-size:13px; color:#8a9aa8; text-align:center; border-top:1px solid #eef1f5; padding-top:16px;">
+      点击「复制」即可复制对应信息
+    </p>
+  </div>
+</div>
+
+<!-- Toast 提示 -->
+<div class="toast-tip" id="toastTip">✅ 已复制到剪贴板</div>
+ </script>
+    <script>
+  (function() {
+    const modal = document.getElementById('contactModal');
+    const trigger = document.getElementById('contactTriggerBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const toast = document.getElementById('toastTip');
+    let timer = null;
+
+    function openModal() {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function showToast(msg) {
+      toast.textContent = msg || '✅ 已复制到剪贴板';
+      toast.classList.add('show');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    function copyText(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = el.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(() => showToast('✅ 已复制：' + text))
+          .catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+    function fallbackCopy(text) {
+      try {
+        const input = document.createElement('input');
+        input.value = text;
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        input.style.left = '-9999px';
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        showToast('✅ 已复制：' + text);
+      } catch (e) {
+        showToast('⚠️ 复制失败，请手动复制');
+      }
+    }
+
+    trigger.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+
+    // 复制按钮事件
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.copy-btn');
+      if (btn) {
+        e.preventDefault();
+        const targetId = btn.getAttribute('data-target');
+        if (targetId) copyText(targetId);
+      }
+    });
+
+    // 点击联系方式文本也可复制
+    document.addEventListener('click', (e) => {
+      const val = e.target.closest('.contact-item .value');
+      if (val) {
+        const item = val.closest('.contact-item');
+        const btn = item?.querySelector('.copy-btn');
+        if (btn) {
+          const id = btn.getAttribute('data-target');
+          if (id) copyText(id);
+        }
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
